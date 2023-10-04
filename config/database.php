@@ -15,7 +15,7 @@ return [
     |
     */
 
-    'default' => env('DB_CONNECTION', 'mysql'),
+    'default' => env('DB_CONNECTION_MSSQL_INSURANCE', 'sqlsrv'),
 
     /*
     |--------------------------------------------------------------------------
@@ -80,15 +80,14 @@ return [
 
         'sqlsrv' => [
             'driver' => 'sqlsrv',
-            'url' => env('DATABASE_URL'),
-            'host' => env('DB_HOST', 'localhost'),
-            'port' => env('DB_PORT', '1433'),
-            'database' => env('DB_DATABASE', 'forge'),
-            'username' => env('DB_USERNAME', 'forge'),
-            'password' => env('DB_PASSWORD', ''),
+            'url' => env('DATABASE_SRV_URL'),
+            'host' => env('DB_SRV_HOST', '192.168.10.150'),// usually localhost, or sql server database ip address
+            //'port' => env('DB_SRV_PORT', '1433'), //default port 1433, or mention port in which it run on your server if it different
+            'database' => env('DB_SRV_DATABASE', 'bime_new'), // mention your sql server database name here
+            'username' => env('DB_SRV_USERNAME', 'sa'), //mssql database username
+            'password' => env('DB_SRV_PASSWORD', 'sql2012'),  //mssql database password
             'charset' => 'utf8',
             'prefix' => '',
-            'prefix_indexes' => true,
         ],
 
     ],
